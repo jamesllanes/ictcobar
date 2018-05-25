@@ -192,7 +192,7 @@
       </li>
       
       <!--<li class="nav-item active">
-        <a class="nav-link" href="index-new.php">Sign In / Register</a>
+        <a class="nav-link" href="index.php">Sign In / Register</a>
       </li>-->
  
       

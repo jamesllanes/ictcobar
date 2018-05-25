@@ -197,7 +197,7 @@
 			<?php  
 				if(empty($_SESSION['user_ID']))
 				{?>
-					<br><a class="nav-link" href="index-new.php"> Create account | Sign in</a><?php
+					<br><a class="nav-link" href="index.php"> Create account | Sign in</a><?php
 				}
 				elseif(!empty($_SESSION['user_ID']))
 				{

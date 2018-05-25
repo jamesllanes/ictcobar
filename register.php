@@ -23,7 +23,7 @@
 			{
 				//there is already an existing same username
 				echo '<script type="text/javascript"> alert("User already exists...try another username") </script>';
-				?><meta http-equiv="refresh" content=".000001;url=../OBaR/index-new.php"/><?php
+				?><meta http-equiv="refresh" content=".000001;url=../OBaR/index.php"/><?php
 			}
 			else
 			{
@@ -33,7 +33,7 @@
 				if($query_run_sucessful)
 				{
 					echo '<script type="text/javascript"> alert("User Registered...Redirecting to the login page.") </script>';
-					?><meta http-equiv="refresh" content=".000001;url=../index-new.php"/><?php
+					?><meta http-equiv="refresh" content=".000001;url=../index.php"/><?php
 				}
 				else
 				{

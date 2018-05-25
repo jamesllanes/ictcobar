@@ -101,7 +101,7 @@
 									}
 									else
 									{
-										?><script type="text/javascript"> alert("Username or Password is incorrect!"); window.location = "index-new.php"; </script><?php
+										?><script type="text/javascript"> alert("Username or Password is incorrect!"); window.location = "index.php"; </script><?php
 									}
 									
 								}
@@ -113,7 +113,7 @@
 									}
 									else
 									{
-										?><script type="text/javascript"> alert("Username or Password is incorrect!"); window.location = "index-new.php"; </script><?php
+										?><script type="text/javascript"> alert("Username or Password is incorrect!"); window.location = "index.php"; </script><?php
 									}
 								}
 								elseif($_SESSION['usertype']=='ICTC_Approver')
@@ -125,7 +125,7 @@
 									}
 									else
 									{
-										?><script type="text/javascript"> alert("Username or Password is incorrect!"); window.location = "index-new.php"; </script><?php
+										?><script type="text/javascript"> alert("Username or Password is incorrect!"); window.location = "index.php"; </script><?php
 									}
 								}
 								else
@@ -136,7 +136,7 @@
 									}
 									else
 									{
-										?><script type="text/javascript"> alert("Username or Password is incorrect!"); window.location = "index-new.php"; </script><?php
+										?><script type="text/javascript"> alert("Username or Password is incorrect!"); window.location = "index.php"; </script><?php
 									}
 								}
 							}
@@ -144,18 +144,18 @@
 						else
 						{
 							//invalid
-							?><script type="text/javascript"> alert("User Account Doesn't Exist!"); window.location = "index-new.php"; </script><?php
+							?><script type="text/javascript"> alert("User Account Doesn't Exist!"); window.location = "index.php"; </script><?php
 						}
 					}
 					/*else
 					{
 						//invalid
-						?><script type="text/javascript"> alert("Invalid Username or Password!"); window.location = "index-new.php"; </script><?php
+						?><script type="text/javascript"> alert("Invalid Username or Password!"); window.location = "index.php"; </script><?php
 					}*/
 				?>
 				
 
-					<form action="index-new.php" method="POST">
+					<form action="index.php" method="POST">
 						<!--<input type="submit" value="Register" class="register"/>-->
 						<br><br><br><br><br>
 						<hr class="hr">

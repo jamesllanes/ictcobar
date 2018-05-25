@@ -4,7 +4,7 @@
 
 	if(!isset($_SESSION['username']))
 	{
-		header('location:../index-new.php');
+		header('location:../index.php');
 	}
 
 	if(isset($_POST['logout']))
@@ -12,7 +12,7 @@
 		session_unset();
 		session_destroy();
 		$_SESSION=array();?>
-		<meta http-equiv="refresh" content=".000001;url=../index-new.php"/><?php
+		<meta http-equiv="refresh" content=".000001;url=../index.php"/><?php
 	}
 
 ?>

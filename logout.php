@@ -6,6 +6,6 @@
 ?>
 <html>
 	<head>
-		<meta http-equiv="refresh" content=".000001;url=index-new.php"/>
+		<meta http-equiv="refresh" content=".000001;url=index.php"/>
 	</head>
 </html>
