@@ -36,7 +36,7 @@
 <body>
 	<div class="Header">	
 		<img src="../Design Template/images/DLSL-logo.png" class="logo" width="100px" height="100px">	
-		<div class="Title">ICTC ONLINE</div>
+		<div class="Title" style="font-family:'open_sans_condensedlight';">ICTC ONLINE</div>
 		<div class="SubTitle">De La Salle Lipa </div>
 	</div>
 	<div id="Menubar_position">
