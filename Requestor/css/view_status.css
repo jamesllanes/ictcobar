@@ -189,14 +189,14 @@ li{
     background: #f2f2f2;
 }
 .status_table {
-    position: absolute;
+    position: relative;
     top: 105px;
     left: 50%;
     transform: translate(-50%);
 }
 
 td{
-    font-size: 12px;
+    font-size: 15px;
     text-align: center;
     padding: 3px;
 }
