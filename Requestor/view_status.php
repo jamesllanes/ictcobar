@@ -150,13 +150,13 @@
 						while($row=mysqli_fetch_array($result1))
 						{
 							$comment=$row['comment'];
-							if($comment!=NULL)
+						}
+						if($comment!=NULL)
 							{
 								?>
 								<td><label>Comment</label></td>
 								<?php
 							}
-						}
 					}
 					?>
 				</tr>
