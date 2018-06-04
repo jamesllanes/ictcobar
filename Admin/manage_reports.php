@@ -147,10 +147,11 @@
 					//}
 				?>
 			</table>
-			<!--<form method="POST">
-				<input type="submit" name="print_by_status" value="PRINT ALL BY STATUS">
-				<input type="submit" name="print_by_date" value="PRINT ALL BY DATE">
-			</form>-->
+			<form method="POST">
+				<input type="submit" name="print" value="Generate PDF">
+				<!--<input type="submit" name="print_by_status" value="PRINT ALL BY STATUS">
+				<input type="submit" name="print_by_date" value="PRINT ALL BY DATE">-->
+			</form>
 			</div>
 		</div>
 			<table>
