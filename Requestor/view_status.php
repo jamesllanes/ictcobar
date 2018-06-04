@@ -212,6 +212,10 @@
 								$comment=$row['comment'];
 								?><td><?php echo $comment ?></td><?php
 							}
+							else
+							{
+								?><td></td><?php
+							}
 							//Ang laman ng cancel request ay yung process ng update na magiging cancel ang request tapos nakaheader dito sa view status with alert na cancel request sent.
 							echo "</tr>";
 						}
