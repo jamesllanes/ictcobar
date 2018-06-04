@@ -425,6 +425,34 @@ a:hover {
     color: #111111;
     text-decoration: none;
 }
+.print {
+    text-align: center;
+    vertical-align: middle;
+    height: 35px;
+    padding: 3px 3px;
+    border: 1px solid #a5a5a5;
+    border-radius: 3px;
+    background: #ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#c4c2c4));
+    background: -moz-linear-gradient(top, #ffffff, #c4c2c4);
+    background: linear-gradient(to bottom, #ffffff, #c4c2c4);
+    font: normal normal bold 12px arial;
+    color: #111111;
+    text-decoration: none;
+
+    position: absolute;
+    left: 120px;
+    top: 48px;
+}
+.print:hover{
+    border: 1px solid #a5a5a5;
+    background: #ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#c4c2c4), to(#ffffff));
+    background: -moz-linear-gradient(top, #c4c2c4, #ffffff);
+    background: linear-gradient(to bottom, #c4c2c4, #ffffff);
+    color: #111111;
+    text-decoration: none;
+}
 .permit_req {
     text-align: center;
     vertical-align: middle;

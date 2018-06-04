@@ -160,7 +160,7 @@
 		</div>
 			<table>
 				<tr><td><button class="back_to_menu" onclick="location='admin_dashboard.php'"/>◄ Back to Dashboard</button></td>
-					<td><button onclick="myFunction()">Print All</button></td></tr>
+					<td><button class="print" onclick="myFunction()">Print All</button></td></tr>
 			</table>
 		</div>
 	</div>
