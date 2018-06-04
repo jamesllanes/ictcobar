@@ -12,14 +12,14 @@
 		session_unset();
 		session_destroy();
 		$_SESSION=array();?>
-		<meta http-equiv="refresh" content=".000001;url=../index-new.php"/><?php
+		<meta http-equiv="refresh" content=".000001;url=../index.php"/><?php
 	}
 
 	function fetch_data()  
 	{  
 		$output = '';
 		$connect = mysqli_connect("localhost", "root", "", "ictc_obar");    
-		$sql_query="SELECT * FROM request ORDER BY status";  
+		$sql_query="SELECT * FROM request";  
 		$result_query=mysqli_query($connect,$sql_query);
 
 		if(mysqli_num_rows($result_query)>0)

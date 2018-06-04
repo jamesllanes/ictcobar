@@ -12,7 +12,7 @@
 		session_unset();
 		session_destroy();
 		$_SESSION=array();?>
-		<meta http-equiv="refresh" content=".000001;url=../index-new.php"/><?php
+		<meta http-equiv="refresh" content=".000001;url=../index.php"/><?php
 	}
 
 	function fetch_data()  
