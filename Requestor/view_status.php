@@ -90,7 +90,7 @@
 					{
 						$comment=$row['comment'];
 						$status=$row['status'];
-						if(($comment!=NULL) && ($status!='PENDING') && ($status!='CANCELLED'))
+						if(($comment!=NULL) || ($status!='PENDING') || ($status!='CANCELLED'))
 						{
 							$size='13';
 						}
