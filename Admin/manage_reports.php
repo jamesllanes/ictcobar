@@ -156,11 +156,11 @@
 				<input type="submit" name="print_by_date" value="PRINT ALL BY DATE">
 				<input type="submit" name="print" value="PRINT ALL">
 			</form>-->
-			<button onclick="myFunction()">Print All</button>
 			</div>
 		</div>
 			<table>
-				<tr><td><button class="back_to_menu" onclick="location='admin_dashboard.php'"/>◄ Back to Dashboard</button></td></tr><br>
+				<tr><td><button class="back_to_menu" onclick="location='admin_dashboard.php'"/>◄ Back to Dashboard</button></td>
+					<td><button onclick="myFunction()">Print All</button></td></tr>
 			</table>
 		</div>
 	</div>
@@ -169,25 +169,5 @@
 	window.print();
 	}
 </script>
-	<footer>
-		<div class="footer-info">
-		<br>
-		<center>
-			<div class="footer-img">
-			<img src="../Design Template/images/footer-img1.png">
-			<img src="../Design Template/images/footer-img2.png">
-			</div>
-
-			<br>
-			De La Salle Lipa; ICTC<br>
-			1962 JP Laurel National Highway<br>
-			Mataas Na Lupa, Lipa City 4217<br>
-			Tel. No. 63.43.756-5555<br>
-			Telefax: 756-3117<br>
-			© Copyright 2018
-			<br>
-		</center>
-		</div>
-	</footer>
 </body>
 </html>
