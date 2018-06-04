@@ -84,7 +84,7 @@
 				<button class="add_user" onclick="location='adduser_account.php'"/><span>Add User</span></button>
 				<tr>
 					<!--SEARCH FORM-->
-					<form action="manage_accounts.php" method="POST">
+					<form action="manage_requests.php" method="POST">
 					    <input type="text" name="search_query" class="search_input" placeholder="Enter Username or Fullname" size='26'/>
 						<input type='submit' id='search' name='search' class="search_btn" value='Search'>
 						<button class="view_all" onclick="location='manage_requests.php'"/><span>View All</span></button><?php
@@ -176,7 +176,7 @@
 								}
 								else
 								{
-									echo '<script type="text/javascript"> alert("Query not found!"); window.location = "manage_accounts.php"; </script>';
+									echo '<script type="text/javascript"> alert("Query not found!"); window.location = "manage_requests.php"; </script>';
 									//echo "<td colspan='13'>Nothing to display</td>";
 								}
 						}
@@ -260,7 +260,7 @@
 							}
 							else
 							{
-								echo '<script type="text/javascript"> alert("There is no request!"); window.location = "manage_accounts.php"; </script>';
+								echo '<script type="text/javascript"> alert("There is no request!"); window.location = "manage_requests.php"; </script>';
 							}
 						}?>
 					</form>
