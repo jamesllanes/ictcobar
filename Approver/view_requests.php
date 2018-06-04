@@ -65,7 +65,6 @@
 						<div class="dropdown">
 							<a class="dropdown" href="#"><?php echo $_SESSION['fullname']; ?></a>
 							<div class="dropdown-content">
-								<a href="#">My Account</a>
 								<a href="../logout.php">Logout</a>
 							</div>
 						</div>
