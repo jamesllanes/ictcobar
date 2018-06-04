@@ -1,3 +1,21 @@
+<?php
+	session_start();
+	require('../dbconfig/config.php');
+
+	if(!isset($_SESSION['username']))
+	{
+		header('location:../index.php');
+	}
+
+	if(isset($_POST['logout']))
+	{
+		session_unset();
+		session_destroy();
+		$_SESSION=array();?>
+		<meta http-equiv="refresh" content=".000001;url=../index.php"/><?php
+	}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,7 +62,20 @@
 					<li class="nav-item active">
 						<a class="nav-link" href="faqs.php">View FAQ</a>
 					</li>
-
+					<?php
+					if(isset($_SESSION['username']))
+					{?>
+				<li class="nav-item active">
+						<div class="dropdown">
+							<a class="dropdown" href="#"><?php echo $_SESSION['fullname']; ?></a>
+							<div class="dropdown-content">
+								<a href="../logout.php">Logout</a>
+							</div>
+						</div>
+					</li><?php
+						
+					}
+					?>
 				</ul>
 			</div>
 		</nav>
