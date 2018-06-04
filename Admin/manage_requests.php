@@ -96,7 +96,7 @@
 								//$search_query=$_SESSION['search_query'];
 
 								//$query_search="SELECT * FROM userinfotable WHERE (username LIKE '%".$search_query."%') OR (fullname LIKE '%".$search_query."%')";
-								$query_search="SELECT * FROM request WHERE CONCAT_WS (rqstr_name, room, college, item_name, quantity, status) LIKE ('%".$search_query."%')";
+								$query_search="SELECT * FROM request WHERE CONCAT_WS (rqstr_name, room, college, item_name, quantity, status) LIKE ('$search_query')";
 
 								$result_search=mysqli_query($connect,$query_search);
 
