@@ -4,7 +4,7 @@
 
 	if(!isset($_SESSION['username']))
 	{
-		header('location:../index-new.php');
+		header('location:../index.php');
 	}
 
 	if(isset($_POST['logout']))
