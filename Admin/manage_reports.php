@@ -156,7 +156,7 @@
 				<input type="submit" name="print_by_date" value="PRINT ALL BY DATE">
 				<input type="submit" name="print" value="PRINT ALL">
 			</form>-->
-			<input type="submit" name="print" onclick="myFunction()" value="Print All">
+			<button onclick="myFunction()">Print All</button>
 			</div>
 		</div>
 			<table>
