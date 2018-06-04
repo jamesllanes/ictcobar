@@ -80,86 +80,176 @@
 		<div class="Service">
 			<p><b>Online Borrowing and Returning of Equipment</b></p><hr>
 		</div>
-		<div>
-			<table class="status_table" border=1>
-				<th colspan='14'><center>Manage Requests </center></th>
+		<button class="back_to_menu" onclick="location='admin_dashboard.php'"/>◄ Back to Dashboard</button><br>
+				<button class="add_user" onclick="location='adduser_account.php'"/><span>Add User</span></button>
 				<tr>
-					<td><label>Request ID</label></td>
-					<td><label>Name of Requestor</label></td>
-					<td><label>Request Date From</label></td>
-					<td><label>Request Date To</label></td>
-					<td><label>Time</label></td>
-					<td><label>Room</label></td>
-					<td><label>College</label></td>
-					<td><label>Item Name</label></td>
-					<td><label>Quantity</label></td>
-					<td><label>Return Date</label></td>
-					<td><label>Return Time</label></td>
-					<td><label>Status</label></td>
-					<td colspan="2"><label>Action</label></td>
-				</tr>
-				<?php
-					$query="SELECT * FROM request";
-					$result=mysqli_query($connect,$query);
+					<!--SEARCH FORM-->
+					<form action="manage_accounts.php" method="POST">
+					    <input type="text" name="search_query" class="search_input" placeholder="Enter Username or Fullname" size='26'/>
+						<input type='submit' id='search' name='search' class="search_btn" value='Search'>
+						<button class="view_all" onclick="location='manage_accounts.php'"/><span>View All</span></button><?php
+						if(isset($_POST['search']))
+							{
+								$search_query=$_POST['search_query'];
+								$_SESSION['search_query']=$search_query;
+								?><!--<meta http-equiv="refresh" content=".000001;url=search_accounts.php"/>--><?php
 
-					if(mysqli_num_rows($result)>0)
-					{
-						while($row=mysqli_fetch_array($result))
-						{
-							$request_ID=$row['request_ID'];
-							$rqstr_name=$row['rqstr_name'];
-							$date_from=$row['date_from'];
-							$date_to=$row['date_to'];
-							$time_rqstd=$row['time_rqstd'];
-							$room=$row['room'];
-							$college=$row['college'];
-							$item_name=$row['item_name'];
-							$quantity=$row['quantity'];
-							$date_rtrn=$row['return_date'];
-							$time_rtrn=$row['return_time'];
-							$status=$row['status'];
-							
-							echo "<tr>";
-							echo "<td class='info'>".$request_ID."</td>";
-							echo "<td class='info'>".$rqstr_name."</td>";
-							echo "<td>".$date_from."</td>";
-							echo "<td>".$date_to."</td>";
-							echo "<td>".date('h:i A', strtotime($time_rqstd))."</td>";
-							echo "<td>".$room."</td>";
-							echo "<td>".$college."</td>";
-							echo "<td>".$item_name."</td>";
-							echo "<td>".$quantity."</td>";
-							echo "<td>".$date_rtrn."</td>";
-							echo "<td>".date('h:i A', strtotime($time_rtrn))."</td>";
-							echo "<td>".$status."</td>";?>
-							<form action="manage_requests.php" method="POST">
-								<input type="hidden" name="requestID_selected" value="<?php echo $row['request_ID'] ?>">
-								
-								<td><input type='submit' id='received' name='delete_request' value='Delete'></td><?php
+								//$search_query=$_SESSION['search_query'];
 
-								if(isset($_POST['edit_request']))
+								//$query_search="SELECT * FROM userinfotable WHERE (username LIKE '%".$search_query."%') OR (fullname LIKE '%".$search_query."%')";
+								$query_search="SELECT * FROM userinfotable WHERE CONCAT_WS (user_ID, fullname, gender, contact_num, email, username, password, usertype) LIKE ('%".$search_query."%')";
+
+								$result_search=mysqli_query($connect,$query_search);
+
+								if(mysqli_num_rows($result_search)>0)
 								{
-									$requestID_selected=$_POST['requestID_selected'];
-									$_SESSION['requestID_selected']=$requestID_selected;
-									?><meta http-equiv="refresh" content=".000001;url=edit_request.php"/><?php
-								}
-								elseif(isset($_POST['delete_request']))
-								{
-									$requestID_selected=$_POST['requestID_selected'];
-									$_SESSION['requestID_selected']=$requestID_selected;
-									?><meta http-equiv="refresh" content=".000001;url=delete_request.php"/><?php
+									?><table class="status_table" border=1>
+									<th colspan='14'><center>Equipment Requests </center></th>
+									<tr>
+										<td><label>User ID</label></td>
+										<td><label>Name of Requestor</label></td>
+										<td><label>Gender</label></td>
+										<td><label>Birthday</label></td>
+										<td><label>Contact Number</label></td>
+										<td><label>Email</label></td>
+										<td><label>Username</label></td>
+										<td><label>Password</label></td>
+										<td><label>Usertype</label></td>
+										<td colspan='2'><label>Action</label></td>
+									</tr>
+									<?php
+									while($row=mysqli_fetch_array($result_search))
+									{
+										$user_ID=$row['user_ID'];
+										$fullname=$row['fullname'];
+										$gender=$row['gender'];
+										$bday=$row['birthday'];
+										$cn=$row['contact_num'];
+										$email=$row['email'];
+										$username=$row['username'];
+										$pw=$row['password'];
+										$usertype=$row['usertype'];
+
+										echo "<tr>";
+										echo "<td class='info'>".$user_ID."</td>";
+										echo "<td class='info'>".$fullname."</td>";
+										echo "<td>".$gender."</td>";
+										echo "<td>".$bday."</td>";
+										echo "<td>".$cn."</td>";
+										echo "<td>".$email."</td>";
+										echo "<td>".$username."</td>";
+										echo "<td>".$pw."</td>";
+										echo "<td>".$usertype."</td>";
+										?>
+
+									<form action="manage_accounts.php" method="POST">
+										<input type="hidden" name="userID_selected" value="<?php echo $row['user_ID'] ?>">
+										<td><input type='submit' id='received' name='edit' value='Edit'></td>
+										<td><input type='submit' id='received' name='delete' value='Delete'></td><?php
+
+										if(isset($_POST['edit']))
+										{
+											$userID_selected=$_POST['userID_selected'];
+											$_SESSION['userID_selected']=$userID_selected;
+											?><!--<meta http-equiv="refresh" content=".000001;url=edit.php"/>--><?php
+										}
+										elseif(isset($_POST['delete']))
+										{
+											$userID_selected=$_POST['userID_selected'];
+											$_SESSION['userID_selected']=$userID_selected;
+											?><meta http-equiv="refresh" content=".000001;url=delete.php"/><?php
+										}
+										else
+										{
+											echo " ";
+										}
+										echo "</tr>";?>
+									</form><?php
+									}
 								}
 								else
 								{
-									echo " ";
-								}?>
-							</form><?php
+									echo '<script type="text/javascript"> alert("Query not found!"); window.location = "manage_accounts.php"; </script>';
+									//echo "<td colspan='13'>Nothing to display</td>";
+								}
 						}
-					}
-				?>
-			</table>
-			<table>
-				<tr><td><button class="back_to_menu" onclick="location='admin_dashboard.php'"/>◄ Back to Dashboard</button></td></tr><br>
+						else
+						{
+							$query="SELECT * FROM userinfotable";
+							$result=mysqli_query($connect,$query);
+
+							if(mysqli_num_rows($result)>0)
+							{
+							?><table class="status_table" border=1>
+								<th colspan='14'><center>User Accounts</center></th>
+								<tr>
+									<td><label>User ID</label></td>
+									<td><label>Name of Requestor</label></td>
+									<td><label>Gender</label></td>
+									<td><label>Birthday</label></td>
+									<td><label>Contact Number</label></td>
+									<td><label>Email</label></td>
+									<td><label>Username</label></td>
+									<td><label>Password</label></td>
+									<td><label>Usertype</label></td>
+									<td colspan='2'><label>Action</label></td>
+								</tr>
+								<?php
+								while($row=mysqli_fetch_array($result))
+								{
+									$user_ID=$row['user_ID'];
+									$fullname=$row['fullname'];
+									$gender=$row['gender'];
+									$bday=$row['birthday'];
+									$cn=$row['contact_num'];
+									$email=$row['email'];
+									$username=$row['username'];
+									$pw=$row['password'];
+									$usertype=$row['usertype'];
+
+									echo "<tr>";
+									echo "<td class='info'>".$user_ID."</td>";
+									echo "<td class='info'>".$fullname."</td>";
+									echo "<td>".$gender."</td>";
+									echo "<td>".$bday."</td>";
+									echo "<td>".$cn."</td>";
+									echo "<td>".$email."</td>";
+									echo "<td>".$username."</td>";
+									echo "<td>".$pw."</td>";
+									echo "<td>".$usertype."</td>";?>
+
+									<form action="manage_accounts.php" method="POST">
+										<input type="hidden" name="userID_selected" value="<?php echo $row['user_ID'] ?>">
+										<td><input type='submit' id='received' name='edit' value='Edit'></td>
+										<td><input type='submit' id='received' name='delete' value='Delete'></td><?php
+
+										if(isset($_POST['edit']))
+										{
+											$userID_selected=$_POST['userID_selected'];
+											$_SESSION['userID_selected']=$userID_selected;
+											?><meta http-equiv="refresh" content=".000001;url=edit.php"/><?php
+										}
+										elseif(isset($_POST['delete']))
+										{
+											$userID_selected=$_POST['userID_selected'];
+											$_SESSION['userID_selected']=$userID_selected;
+											?><meta http-equiv="refresh" content=".000001;url=delete.php"/><?php
+										}
+										else
+										{
+											echo " ";
+										}
+										echo "</tr>"?>
+									</form><?php
+								}
+							}
+							else
+							{
+								echo '<script type="text/javascript"> alert("There is no request!"); window.location = "manage_accounts.php"; </script>';
+							}
+						}?>
+					</form>
+				</tr>
 			</table>
 		</div>
 	</div>
