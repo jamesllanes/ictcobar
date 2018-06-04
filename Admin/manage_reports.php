@@ -99,12 +99,11 @@
 					<td><label>Status</label></td>
 				</tr>
 				<?php
-					/*if(isset($_POST['print_by_status']))
+					if(isset($_POST['print_by_status']))
 					{?>
 						<meta http-equiv="refresh" content=".000001;url=generate_reports.php"/><?php
 					}
-					else*/
-					if(isset($_POST['print_by_status']))
+					elseif(isset($_POST['print_by_date']))
 					{?>
 						<meta http-equiv="refresh" content=".000001;url=generate_reports_by_date.php"/><?php
 					}
@@ -149,8 +148,8 @@
 				?>
 			</table>
 			<form method="POST">
-				<input type="submit" name="print_by_status" value="PRINT ALL">
-				<!--<input type="submit" name="print_by_date" value="PRINT ALL BY DATE">-->
+				<input type="submit" name="print_by_status" value="PRINT ALL BY STATUS">
+				<input type="submit" name="print_by_date" value="PRINT ALL BY DATE">
 			</form>
 			</div>
 		</div>
