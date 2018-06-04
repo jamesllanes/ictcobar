@@ -95,7 +95,7 @@
 					<a href="manage_requests.php">Manage Requests</a>
 				</div>
 				<div class="three">
-					<a href="manage_reports.php">Generate Reports</a>
+					<a href="generate_reports.php">Generate Reports</a>
 				</div>
 			</div>
 		</div>
