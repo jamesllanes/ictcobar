@@ -19,7 +19,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="css/view_requests.css">
+	<link rel="stylesheet" href="css/manage_accounts.css">
     <link rel="stylesheet" href="../Design Template/custom.css">
     <link rel="stylesheet" href="../Design Template/css/bootstrap.min.css">
 	<link href="../Design Template/local-fonts/Orbitron/Orbitron.css" rel="stylesheet">   
