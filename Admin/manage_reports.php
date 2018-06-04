@@ -101,7 +101,7 @@
 				<?php
 					if(isset($_POST['print_by_status']))
 					{?>
-						<meta http-equiv="refresh" content=".000001;url=generate_reports_by_status.php"/><?php
+						<meta http-equiv="refresh" content=".000001;url=generate_reports.php"/><?php
 					}
 					elseif(isset($_POST['print_by_date']))
 					{?>
