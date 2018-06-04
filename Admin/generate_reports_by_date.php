@@ -4,7 +4,7 @@
 
 	if(!isset($_SESSION['username']))
 	{
-		header('location:../index-new.php');
+		header('location:../index.php');
 	}
 
 	if(isset($_POST['logout']))
@@ -132,7 +132,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav">
 					<li class="nav-item active">
-						<a class="nav-link" href="#">Home <span></span><span></span></a>
+						<a class="nav-link" href="../index.php">Home <span></span><span></span></a>
 					</li>
 
 					<li class="nav-item active">
@@ -144,7 +144,7 @@
 					</li>
 
 					<li class="nav-item active">
-						<a class="nav-link" href="#">View FAQ</a>
+						<a class="nav-link" href="../faqs.php">View FAQ</a>
 					</li>
 					<li class="nav-item active">
 						<div class="dropdown">
