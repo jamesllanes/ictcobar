@@ -1,10 +1,10 @@
 <?php
 	session_start();
-	require('../dbconfig/config.php');
+	require('dbconfig/config.php');
 
-	if(!isset($_SESSION['username']))
+	/*if(!isset($_SESSION['username']))
 	{
-		header('location:../index.php');
+		header('location:index.php');
 	}
 
 	if(isset($_POST['logout']))
@@ -12,8 +12,8 @@
 		session_unset();
 		session_destroy();
 		$_SESSION=array();?>
-		<meta http-equiv="refresh" content=".000001;url=../index.php"/><?php
-	}
+		<meta http-equiv="refresh" content=".000001;url=index.php"/><?php
+	}*/
 
 ?>
 <!DOCTYPE html>
@@ -48,7 +48,45 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav">
 					<li class="nav-item active">
-						<a class="nav-link" href="index.php">Home <span></span><span></span></a>
+						<?php
+						if(!empty($_SESSION['username']))
+						{
+							$query="SELECT * FROM userinfotable WHERE username = '$_SESSION[username]' ";
+							$result=mysqli_query($connect,$query);
+							if(mysqli_num_rows($result)>0)
+							{
+								while($row=mysqli_fetch_array($result))
+								{
+									$row['usertype'];
+									if($row['usertype']=='Requestor')
+									{
+										?><a class="nav-link" href="Requestor/homepage_requestor.php">Home <span></span><span></span></a><?php
+									}
+									elseif($row['usertype']=='Immediate_Superior')
+									{
+										?><a class="nav-link" href="Immediate_Superior/immediate_superior_dashboard.php">Home <span></span><span></span></a><?php
+									}
+									elseif($row['usertype']=='ICTC_Approver')
+									{
+										?><a class="nav-link" href="Approver/approver_dashboard.php">Home <span></span><span></span></a><?php
+									}
+									elseif($row['usertype']=='ICTC_Admin')
+									{
+										?><a class="nav-link" href="Admin/admin_dashboard.php">Home <span></span><span></span></a><?php
+									}
+									else
+									{
+										?><a class="nav-link" href="index.php">Home <span></span><span></span></a><?php
+									}
+								}
+							}
+						}
+						else
+						{
+							?><a class="nav-link" href="index.php">Home <span></span><span></span></a><?php
+						}
+						?>
+						<!--<a class="nav-link" href="index.php">Home <span></span><span></span></a>-->
 					</li>
 
 					<li class="nav-item active">
@@ -63,17 +101,20 @@
 						<a class="nav-link" href="faqs.php">View FAQ</a>
 					</li>
 					<?php
-					if(isset($_SESSION['username']))
+					if(!empty($_SESSION['username']))
 					{?>
-				<li class="nav-item active">
-						<div class="dropdown">
-							<a class="dropdown" href="#"><?php echo $_SESSION['fullname']; ?></a>
-							<div class="dropdown-content">
-								<a href="../logout.php">Logout</a>
+					<li class="nav-item active">
+							<div class="dropdown">
+								<a class="dropdown" href="#"><?php echo $_SESSION['fullname']; ?></a>
+								<div class="dropdown-content">
+									<a href="logout.php">Logout</a>
+								</div>
 							</div>
-						</div>
-					</li><?php
-						
+						</li><?php	
+					}
+					else
+					{
+
 					}
 					?>
 				</ul>
