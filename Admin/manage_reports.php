@@ -99,7 +99,7 @@
 					<td><label>Status</label></td>
 				</tr>
 				<?php
-					if(isset($_POST['print_by_status']))
+					/*if(isset($_POST['print_by_status']))
 					{?>
 						<meta http-equiv="refresh" content=".000001;url=generate_reports.php"/><?php
 					}
@@ -108,7 +108,7 @@
 						<meta http-equiv="refresh" content=".000001;url=generate_reports_by_date.php"/><?php
 					}
 					else
-					{
+					{*/
 						$query="SELECT * FROM request";
 						$result=mysqli_query($connect,$query);
 
@@ -144,7 +144,7 @@
 								echo "<td>".$status."</td>";
 							}
 						}
-					}
+					//}
 				?>
 			</table>
 			<!--<form method="POST">
