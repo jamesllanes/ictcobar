@@ -159,8 +159,7 @@
 			</div>
 		</div>
 			<table>
-				<tr><td><button class="back_to_menu" onclick="location='admin_dashboard.php'"/>◄ Back to Dashboard</button></td>
-					<td><button class="print" onclick="myFunction()">Print All</button></td></tr>
+				<tr><td><button class="back_to_menu" style="display:inline-block;" onclick="location='admin_dashboard.php'"/>◄ Back to Dashboard</button><button class="print" style="display:inline-block;" onclick="myFunction()">Print All</button></td></tr>
 			</table>
 		</div>
 	</div>
