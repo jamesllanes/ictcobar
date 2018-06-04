@@ -99,7 +99,7 @@
 					<td><label>Status</label></td>
 				</tr>
 				<?php
-					if(isset($_POST['print_by_status']))
+					/*if(isset($_POST['print_by_status']))
 					{?>
 						<meta http-equiv="refresh" content=".000001;url=generate_reports.php"/><?php
 					}
@@ -109,10 +109,10 @@
 					}
 					elseif(isset($_POST['print']))
 					{?>
-						<meta http-equiv="refresh" content=".000001;url=generate_reports.php"/><?php
+						<meta http-equiv="refresh" content=".000001;url=generate_reports_by_date.php"/><?php
 					}
 					else
-					{
+					{*/
 						$query="SELECT * FROM request";
 						$result=mysqli_query($connect,$query);
 
@@ -148,14 +148,15 @@
 								echo "<td>".$status."</td>";
 							}
 						}
-					}
+					//}
 				?>
 			</table>
-			<form method="POST">
+			<!--<form method="POST">
 				<input type="submit" name="print_by_status" value="PRINT ALL BY STATUS">
 				<input type="submit" name="print_by_date" value="PRINT ALL BY DATE">
 				<input type="submit" name="print" value="PRINT ALL">
-			</form>
+			</form>-->
+			<input type="submit" name="print" onclick="myFunction()" value="PRINT ALL">
 			</div>
 		</div>
 			<table>
@@ -163,7 +164,11 @@
 			</table>
 		</div>
 	</div>
-
+<script>
+	function myFunction() {
+	window.print();
+	}
+</script>
 	<footer>
 		<div class="footer-info">
 		<br>
