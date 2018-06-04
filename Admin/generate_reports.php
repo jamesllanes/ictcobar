@@ -365,7 +365,7 @@
 				?>
 			</table>
 			<tr><td><button class="back_to_menu" onclick="location='admin_dashboard.php'"/>◄ Back to Dashboard</button></td></tr><br>
-			<form method="POST">
+			<form method="POST" action="generate_reports.php">
 				<input type="submit" name="print" value="PRINT ALL">
 				<input type="submit" name="print_by_status" value="PRINT ALL BY STATUS">
 				<input type="submit" name="print_by_date" value="PRINT ALL BY DATE">
