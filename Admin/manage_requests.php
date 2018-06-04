@@ -81,11 +81,10 @@
 			<p><b>Online Borrowing and Returning of Equipment</b></p><hr>
 		</div>
 		<button class="back_to_menu" onclick="location='admin_dashboard.php'"/>◄ Back to Dashboard</button><br>
-				<button class="add_user" onclick="location='adduser_account.php'"/><span>Add User</span></button>
 				<tr>
 					<!--SEARCH FORM-->
 					<form action="manage_requests.php" method="POST">
-					    <input type="text" name="search_query" class="search_input" placeholder="Enter Username or Fullname" size='26'/>
+					    <input type="text" name="search_query" class="search_input" placeholder="Enter Search key" size='26'/>
 						<input type='submit' id='search' name='search' class="search_btn" value='Search'>
 						<button class="view_all" onclick="location='manage_requests.php'"/><span>View All</span></button><?php
 						if(isset($_POST['search']))
