@@ -19,7 +19,7 @@
 	{  
 		$output = '';
 		$connect = mysqli_connect("localhost", "root", "", "ictc_obar");    
-		$sql_query="SELECT * FROM request ORDER BY status";  
+		$sql_query="SELECT * FROM request ORDER BY status ASC";  
 		$result_query=mysqli_query($connect,$sql_query);
 
 		if(mysqli_num_rows($result_query)>0)
