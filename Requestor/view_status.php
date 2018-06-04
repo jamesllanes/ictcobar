@@ -155,6 +155,7 @@
 								?>
 								<td><label>Comment</label></td>
 								<?php
+								break;
 							}
 						}
 					}
