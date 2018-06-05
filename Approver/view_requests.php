@@ -229,12 +229,12 @@
 									
 									$status='APPROVED';
 									$comment=$_POST['comment'];
-									echo $status;
+									//echo $status;
 								}
 								else
 								{
 									$status='CANCELLED';	
-									echo $status;
+									//echo $status;
 								}
 
 								$query_select="SELECT * FROM request WHERE request_ID = '$request_selected'";
